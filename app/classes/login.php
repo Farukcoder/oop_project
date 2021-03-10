@@ -24,9 +24,12 @@ class login
 				$_SESSION['user_id']= $row['id'];
 				$_SESSION['username']= $row['username'];
 				$_SESSION['name']= $row['name'];
+				$login_success=$_SESSION['massage']= "Successfully login..!!";
+				return $login_success;
 				header("location:index.php");
+
 			}else{
-				$login_error = "Username or password invalid!!";
+				$login_error = $_SESSION['massage'] = "Username or password invalid!!";
 				return $login_error;
 			}
 		}else{

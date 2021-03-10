@@ -70,14 +70,17 @@ class Category
     $query = "UPDATE `catagory` SET category_name = '$category_name', status = '$status' WHERE id = '$id'";
 
     $result = mysqli_query(database::dbcon(), $query);
+
     if ($result) {
-      header('location:edit_category.php?id='.$id);
-      $update_msg = "category update successfully";
+      $update_msg = $_SESSION['status']="category update successfully";
       return $update_msg;
+
+      header('location:manage_category.php');
     } else {
+      $update_msg_errr = $_SESSION['status']= "category not updated";
+      return $update_msg_errr;
+
       header('location:edit_category.php?id='.$id);
-      $update_msg = "category not updated";
-      return $update_msg;
     }
   }
 }

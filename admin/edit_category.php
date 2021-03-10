@@ -42,6 +42,18 @@ if (isset($_POST['update_category'])) {
 									<?php
 									}
 									?>
+									<?php unset($update_msg);?>
+									<?php
+										if(isset($update_msg_errr)){
+											?>
+											<div class="alert alert-danger alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+											<i class="fa fa-check-circle"></i><?= $update_msg_errr;?>
+										</div>
+											<?php
+										}
+									?>
+									<?php unset($update_msg_errr);?>
 
 									<div class="panel-body">
 										<label class="from-control">Category Name</label>
@@ -73,6 +85,12 @@ if (isset($_POST['update_category'])) {
 	<!-- END MAIN CONTENT -->
 </div>
 <!-- END MAIN -->
+<script>
+	setTimeout(function() {
+		let alert = document.querySelector('.alert');
+		alert.remove();
+	}, 3000);
+</script>
 <?php
 require_once "templete/foot.php";
 require_once "templete/footer.php"

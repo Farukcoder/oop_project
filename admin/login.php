@@ -53,8 +53,16 @@ if (isset($_SESSION['user_id'])){
                                         </div>
                                 <?php
                                     }
-
                                 ?>
+								<?php
+									if(isset($login_success)){
+										?>
+										 <div class="alert alert-success" role="alert">
+		                                    <?= $login_success;?>
+                                        </div>
+										<?php
+									} 
+								?>
 
 <!--                                <p class="lead text-danger"></p>-->
 							</div>
@@ -96,6 +104,12 @@ if (isset($_SESSION['user_id'])){
 		</div>
 	</div>
 	<!-- END WRAPPER -->
+	<script>
+		setTimeout(function() {
+			let alert = document.querySelector(".alert");
+			alert.remove();
+		}, 3000);
+	</script>
 </body>
 
 </html>

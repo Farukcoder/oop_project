@@ -37,6 +37,18 @@ if (isset($_POST['add_category'])) {
 										</div>
 									<?php
 									}
+									unset($insert_msg);
+									?>
+									<?php
+									if (isset($insert_msg_err)) {
+									?>
+										<div class="alert alert-success alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+											<i class="fa fa-check-circle"></i><?= $insert_msg_err;?>
+										</div>
+									<?php
+									}
+									unset($insert_msg_err);
 									?>
 
 									<div class="panel-body">
@@ -68,6 +80,12 @@ if (isset($_POST['add_category'])) {
 	<!-- END MAIN CONTENT -->
 </div>
 <!-- END MAIN -->
+<script>
+	setTimeout(function() {
+		let alert = document.querySelector('.alert');
+		alert.remove();
+	}, 3000);
+</script>
 <?php
 require_once "templete/foot.php";
 require_once "templete/footer.php"

@@ -17,15 +17,15 @@ if (!isset($_SESSION['user_id'])){
 			<div class="navbar-btn">
 				<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 			</div>
-			<form class="navbar-form navbar-left">
+			<!-- <form class="navbar-form navbar-left">
 				<div class="input-group">
 					<input type="text" value="" class="form-control" placeholder="Search dashboard...">
 					<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
 				</div>
-			</form>
+			</form> -->
 			<div id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
+					<!-- <li class="dropdown">
 						<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 							<i class="lnr lnr-alarm"></i>
 							<span class="badge bg-danger">5</span>
@@ -47,7 +47,7 @@ if (!isset($_SESSION['user_id'])){
 							<li><a href="#">Security</a></li>
 							<li><a href="#">Troubleshooting</a></li>
 						</ul>
-					</li>
+					</li> -->
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png"
 						                                                                class="img-circle" alt="Avatar"> <span><?= $_SESSION['name']; ?></span> <i

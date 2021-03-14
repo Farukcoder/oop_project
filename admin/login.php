@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (isset($_SESSION['user_id'])){
-	header('location:index.php');
-}
+// session_start();
+// if (isset($_SESSION['user_id'])){
+// 	header('location:index.php');
+// }
     require_once "../vendor/autoload.php";
     $login = new \App\classes\login();
 
@@ -45,15 +45,6 @@ if (isset($_SESSION['user_id'])){
 							<div class="header">
 								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
-                                <?php
-                                    if (isset($login_error)){
-                                        ?>
-                                        <div class="alert alert-danger" role="alert">
-		                                    <?= $login_error;?>
-                                        </div>
-                                <?php
-                                    }
-                                ?>
 								<?php
 									if(isset($login_success)){
 										?>
@@ -63,6 +54,17 @@ if (isset($_SESSION['user_id'])){
 										<?php
 									} 
 								?>
+								<?php unset($login_success);?>
+								<?php
+                                    if (isset($login_error)){
+                                        ?>
+                                        <div class="alert alert-danger" role="alert">
+		                                    <?= $login_error;?>
+                                        </div>
+                                <?php
+                                    }
+                                ?>
+								<?php unset($login_success);?>
 
 <!--                                <p class="lead text-danger"></p>-->
 							</div>
@@ -108,6 +110,7 @@ if (isset($_SESSION['user_id'])){
 		setTimeout(function() {
 			let alert = document.querySelector(".alert");
 			alert.remove();
+			window.location.href = "index.php";
 		}, 3000);
 	</script>
 </body>

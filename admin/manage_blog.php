@@ -73,7 +73,7 @@ $all_blog = $blog->all_blog();
 										?>
 									</td>
 									<td>
-										<a href="edit_blog.php?id=<?= $value['id'] ?>"><button class="btn btn-warning">View</button></a>
+										<!-- <a href="edit_blog.php?id=<?= $value['id'] ?>"><button class="btn btn-warning">View</button></a> -->
 
 										<a href="edit_blog.php?id=<?= $value['id'] ?>"><button class="btn btn-info">Edit</button></a>
 

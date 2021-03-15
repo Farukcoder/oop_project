@@ -10,16 +10,16 @@ $categoris = $category->all_category();
 
 // $data = mysqli_fetch_assoc($categoris);
 
-// if (isset($_GET['active'])) {
+if (isset($_GET['active'])) {
 
-// 	$id = $_GET['active'];
-// 	$category->active($id);
-// }
-// if (isset($_GET['inactive'])) {
+	$id = $_GET['active'];
+	$category->active($id);
+}
+if (isset($_GET['inactive'])) {
 
-// 	$id = $_GET['inactive'];
-// 	$category->inactive($id);
-// }
+	$id = $_GET['inactive'];
+	$category->inactive($id);
+}
 
 
 ?>
@@ -56,17 +56,17 @@ $categoris = $category->all_category();
 										<?php
 										if ($value['status'] == 1) {
 										?>
-											<a class="btn btn-danger" href="status.php?id=<?= $value['id']; ?>&category=category&inactive=inactive">Inactive</a>
+											<a class="btn btn-danger" href="?inactive=<?= $value['id']; ?>">Inactive</a>
 										<?php
 										} else {
 										?>
-											<a class="btn btn-success" href="status.php?id=<?= $value['id']; ?>&category=category&active=active">Active</a>
+											<a class="btn btn-success" href="?active=<?= $value['id']; ?>">Active</a>
 										<?php
 										}
 										?>
-										<a href="edit_category.php?id=<?= $value['id']?>"><button class="btn btn-success">Edit</button></a>
-										
-										<a href="delete.php?id=<?= $value['id']?>&category=category"><button class="btn
+										<button class="btn btn-success">Edit</button>
+										<a href="delete.php?id=<?= $value['id']?>&
+										cat = cat"><button class="btn
 										btn-danger">Delete</button></a>
 									</td>
 								</tr>

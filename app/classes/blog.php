@@ -60,4 +60,46 @@ class blog
     $query = "DELETE FROM `blog` WHERE id = '$id'";
     mysqli_query(database::dbcon(), $query);
   }
+
+  public function select_row($id=''){
+    $query = "SELECT * FROM blog WHERE id='$id'";
+    $result = mysqli_query(database::dbcon(),$query);
+    return $result;
+  }
+  public function update_blog($data)
+  {
+    // print_r($data);
+    // exit();
+    
+    $title = $data['title'];
+    $content = $data['content'];
+    $category_id = $data['category_id'];
+    $status = $data['status'];
+    $name = $_SESSION['name'];
+    $id = $_POST['id'];
+
+    if($file_name = $_FILES['photo']['name']== NULL){
+      $query = "UPDATE `blog` SET `category_id`='$category_id', `title`='$title', `content`='$content', `name`='$name', `status`='$status' WHERE id ='$id'";
+    }else{
+      $file_name = $_FILES['photo']['name'];
+      $file_ext = explode('.',$file_name);
+      $file_ext = end($file_ext);
+      $file_name = date('Ymdhis.').$file_ext;
+      $query = "UPDATE `blog` SET category_id='$category_id', `title`='$title', `content`='$content', `photo`='$file_name', `name`='$name', `status`='$status' WHERE id ='$id'";
+      move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/img/blog/'.$file_name);
+    }
+    $result = mysqli_query(database::dbcon(), $query);
+
+    if ($result) {
+      $update_msg = $_SESSION['status']="category update successfully";
+      return $update_msg;
+
+      header('location:manage_category.php');
+    } else {
+      $update_msg_errr = $_SESSION['status']= "category not updated";
+      return $update_msg_errr;
+
+      header('location:edit_category.php?id='.$id);
+    }
+  }
 }

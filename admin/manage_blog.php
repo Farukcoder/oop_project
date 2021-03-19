@@ -58,7 +58,7 @@ $all_blog = $blog->all_blog();
 									<td>
 										<img src="assets/img/blog/<?= $value['photo'] ?>" alt="" height=50px" width="50px">
 									</td>
-									<td><?= $value['content'] ?></td>
+									<td><?= substr($value['content'],0,100) ?>...</td>
 									<td>
 										<?php
 										if ($value['status'] == 1) {
@@ -77,7 +77,7 @@ $all_blog = $blog->all_blog();
 
 										<a href="edit_blog.php?id=<?= $value['id'] ?>"><button class="btn btn-info">Edit</button></a>
 
-										<a href="delete.php?id=<?= $value['id'] ?>&blog=blog"><button class="btn
+										<a href="delete.php?id=<?= $value['id'] ?>&blog=blog&filename=<?=$value['photo']?>"><button class="btn
 										btn-danger">Delete</button></a>
 									</td>
 								</tr>

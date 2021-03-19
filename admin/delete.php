@@ -16,6 +16,8 @@ $blog = new \App\classes\blog();
     if(isset($_GET['blog'])){
         $id = $_GET['id'];
         $blog->delete($id);
+        $file = $_GET['filename'];
+        unlink('assets/img/blog/'.$file);
         header('location:manage_blog.php');
     }
 

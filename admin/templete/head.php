@@ -22,4 +22,6 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 	<!-- custom css -->
 	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>

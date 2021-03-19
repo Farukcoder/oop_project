@@ -64,10 +64,12 @@ if (isset($_GET['inactive'])) {
 										<?php
 										}
 										?>
-										<button class="btn btn-success">Edit</button>
+										<a href="edit_category.php?id=<?= $value['id'] ?>"><button class="btn btn-info">Edit</button></a>
+
 										<a href="delete.php?id=<?= $value['id']?>&
-										cat = cat"><button class="btn
+										category=cat "><button class="btn
 										btn-danger">Delete</button></a>
+										
 									</td>
 								</tr>
 							<?php

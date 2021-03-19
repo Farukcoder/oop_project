@@ -10,21 +10,21 @@ require_once "../vendor/autoload.php";
 $blog = new  \App\classes\blog();
 $category = new  \App\classes\Category();
 
-$all_active_category= $category->all_active_category();
+$all_active_category = $category->all_active_category();
 // $row = mysqli_fetch_assoc($all_active_category);
 // print_r($row);
 // exit();
 
-if(isset($_POST['add_blog'])){
+if (isset($_POST['add_blog'])) {
 	$insert_msg = $blog->add_blog($_POST);
 }
 ?>
 <!-- MAIN -->
 <div class="main">
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
-        <div class="container-fluid">
-           <!-- OVERVIEW -->
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="container-fluid">
+			<!-- OVERVIEW -->
 			<div class="panel panel-headline">
 				<div class="panel-heading">
 					<h3 class="panel-title">Add Blog</h3>
@@ -40,7 +40,7 @@ if(isset($_POST['add_blog'])){
 									?>
 										<div class="alert alert-success alert-dismissible" role="alert">
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-											<i class="fa fa-check-circle"></i><?= $insert_msg;?>
+											<i class="fa fa-check-circle"></i><?= $insert_msg; ?>
 										</div>
 									<?php
 									}
@@ -51,7 +51,7 @@ if(isset($_POST['add_blog'])){
 									?>
 										<div class="alert alert-success alert-dismissible" role="alert">
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-											<i class="fa fa-check-circle"></i><?= $insert_msg_err;?>
+											<i class="fa fa-check-circle"></i><?= $insert_msg_err; ?>
 										</div>
 									<?php
 									}
@@ -59,32 +59,33 @@ if(isset($_POST['add_blog'])){
 									?>
 
 									<div class="panel-body">
-                                        <label for="category">Category Select</label>
-                                        <select class="form-control" id="category_id" name="category_id" required>
-                                            <option>select</option>
+										<label for="category">Category Select</label>
+										<select class="form-control" id="category_id" name="category_id" required>
+											<option>select</option>
 											<?php
-												while($value=mysqli_fetch_assoc($all_active_category) ){
-												?>
-												 <option value="<?= $value['id'] ?>"><?= $value['category_name']; ?></option>
-											<?php
-												}
+											while ($value = mysqli_fetch_assoc($all_active_category)) {
 											?>
-                                           
-                                        </select>
-                                        <br>
+												<option value="<?= $value['id'] ?>"><?= $value['category_name']; ?></option>
+											<?php
+											}
+											?>
 
-                                            <label for="photo">Photo</label>
-                                            <input type="file" class="form-control" id="photo" name="photo" placeholder="title">
+										</select>
+										<br>
+
+										<label for="photo">Photo</label>
+										<input type="file" class="form-control" id="photo" name="photo" placeholder="title">
+										<img id="preview" src="#" alt="" width="100px" height="100px">
 
 										<br>
 
-                                            <label for="title">Title</label>
-                                            <input type="text" class="form-control" id="title" name="title" placeholder="title" required>
+										<label for="title">Title</label>
+										<input type="text" class="form-control" id="title" name="title" placeholder="title" required>
 
-                                        <br>
-                                            <label for="content">Blog Content</label>
-                                            <textarea class="form-control" placeholder="Blog content" name="content" rows="4" required></textarea>
-                                        <br>
+										<br>
+										<label for="content">Blog Content</label>
+										<textarea class="form-control" placeholder="Blog content" name="content" rows="4" required></textarea>
+										<br>
 										<label class="from-control">Status</label>
 										<label class="fancy-radio">
 											<input name="status" value="1" type="radio">
@@ -104,9 +105,9 @@ if(isset($_POST['add_blog'])){
 				</div>
 			</div>
 			<!-- END OVERVIEW -->
-        </div>
-    </div>
-    <!-- END MAIN CONTENT -->
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
 </div>
 <!-- END MAIN -->
 <script>
@@ -114,6 +115,23 @@ if(isset($_POST['add_blog'])){
 		let alert = document.querySelector('.alert');
 		alert.remove();
 	}, 3000);
+</script>
+<script>
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$('#preview').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]); // convert to base64 string
+		}
+	}
+
+	$("#photo").change(function() {
+		readURL(this);
+	});
 </script>
 <?php
 require_once "templete/foot.php";

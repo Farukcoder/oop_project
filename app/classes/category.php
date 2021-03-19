@@ -90,4 +90,14 @@ class Category
       header('location:edit_category.php?id='.$id);
     }
   }
+  public function cat_post($id){
+    $query = "SELECT * FROM blog WHERE status='1' AND category_id='$id'";
+    $result = mysqli_query(database::dbcon(),$query);
+    return $result;
+  }
+  public function search_post($text){
+    $query = "SELECT * FROM blog WHERE title like '%$text%' AND status='1' order by id desc ";
+    $result = mysqli_query(database::dbcon(),$query);
+    return $result;
+  }
 }

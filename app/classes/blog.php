@@ -60,12 +60,22 @@ class blog
     $query = "DELETE FROM `blog` WHERE id = '$id'";
     mysqli_query(database::dbcon(), $query);
   }
-
+  public function all_active_blog(){
+    $query = "SELECT * FROM blog WHERE status='1'";
+    $result = mysqli_query(database::dbcon(),$query);
+    return $result;
+  }
+  public function single_post($id){
+    $query = "SELECT * FROM blog WHERE id='$id'";
+    $result = mysqli_query(database::dbcon(),$query);
+    return $result;
+  }
   public function select_row($id=''){
     $query = "SELECT * FROM blog WHERE id='$id'";
     $result = mysqli_query(database::dbcon(),$query);
     return $result;
   }
+  
   public function update_blog($data)
   {
     // print_r($data);

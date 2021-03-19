@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2021 at 03:14 AM
+-- Generation Time: Mar 19, 2021 at 07:39 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -43,16 +43,10 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `category_id`, `title`, `content`, `photo`, `name`, `status`, `creat_time`) VALUES
-(1, 0, 'sefsdfadf', 'sdaff asdf asf a df ', '20210313030832.sql', 'Md omar faruk', 1, '2021-03-13 02:08:32'),
-(2, 0, 'there ar no more ', 'dfjdjfadjf sdfadfj ksdfj', '20210313031244.sql', 'Md omar faruk', 1, '2021-03-13 02:12:44'),
-(3, 0, 'fgdf', 'fgfg', '20210313031450.sql', 'Md omar faruk', 0, '2021-03-13 02:14:50'),
-(4, 0, 'fgdf', 'fgfg', '20210313031606.sql', 'Md omar faruk', 0, '2021-03-13 02:16:06'),
-(7, 0, '', '', '20210313031700.', 'Md omar faruk', 0, '2021-03-13 02:17:00'),
-(8, 0, '', '', '20210313031704.', 'Md omar faruk', 0, '2021-03-13 02:17:04'),
-(9, 0, '', '', '20210313031708.', 'Md omar faruk', 0, '2021-03-13 02:17:08'),
-(10, 0, '', '', '20210313031731.', 'Md omar faruk', 0, '2021-03-13 02:17:31'),
-(11, 6, 'bejoy vai is here', 'there are main content', '20210314054444.jpg', 'Md omar faruk', 0, '2021-03-14 17:24:36'),
-(12, 2, 'E-library', 'zfsfgvfsdfsd', '20210315024629.jpg', 'Md omar faruk', 1, '2021-03-15 01:46:30');
+(1, 1, 'Facebook is the best social media', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)', '20210319054937.png', 'Md omar faruk', 1, '2021-03-19 16:49:37'),
+(2, 2, 'instagram is the part of facebook', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)', '20210319055252.png', 'Md omar faruk', 1, '2021-03-19 16:52:52'),
+(3, 3, 'whatsapp is the qualityfull calling system', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)', '20210319055331.png', 'Md omar faruk', 1, '2021-03-19 16:53:31'),
+(4, 4, 'twiter is the celebrity social media', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)', '20210319055412.png', 'Md omar faruk', 1, '2021-03-19 16:54:12');
 
 -- --------------------------------------------------------
 
@@ -73,12 +67,11 @@ CREATE TABLE `catagory` (
 --
 
 INSERT INTO `catagory` (`id`, `category_name`, `status`, `create_time`, `update_time`) VALUES
-(1, 'kabila', 0, '2021-03-02 02:08:51', '2021-03-11 01:01:26'),
-(2, 'Tasrif', 1, '2021-03-02 02:10:11', '2021-03-11 01:01:30'),
-(3, 'talha', 1, '2021-03-02 02:10:20', '2021-03-11 01:01:27'),
-(5, 'Babu', 1, '2021-03-09 17:12:18', '2021-03-11 01:01:29'),
-(6, 'bejoy', 1, '2021-03-09 17:12:33', '2021-03-11 01:01:32'),
-(8, 'talharahman', 0, '2021-03-11 01:01:13', '2021-03-11 01:01:23');
+(1, 'Facebook', 1, '2021-03-19 16:43:29', '2021-03-19 16:43:29'),
+(2, 'Instagram', 1, '2021-03-19 16:43:42', '2021-03-19 16:43:42'),
+(3, 'whatsapp', 1, '2021-03-19 16:43:53', '2021-03-19 16:43:53'),
+(4, 'twiter', 1, '2021-03-19 16:44:07', '2021-03-19 16:44:07'),
+(5, 'skype', 1, '2021-03-19 16:44:16', '2021-03-19 16:44:16');
 
 -- --------------------------------------------------------
 
@@ -135,13 +128,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `catagory`
 --
 ALTER TABLE `catagory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
